@@ -5,7 +5,7 @@
   <groupId>com.linkedin</groupId>
   <artifactId>haivvreo</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.7-SNAPSHOT</version>
+  <version>1.0.7-cdh-SNAPSHOT</version>
   <name>haivvreo</name>
   <url>https://github.com/jghoman/haivvreo</url>
   <description>Library for processing Avro data in Hive.</description>
@@ -43,6 +43,19 @@
       </plugin>
     </plugins>
   </build>
+
+  <distributionManagement>
+    <repository>
+      <id>cdh.releases.repo</id>
+      <url>https://repository.cloudera.com/artifactory/libs-release-local</url>
+      <name>CDH Releases Repository</name>
+    </repository>
+    <snapshotRepository>
+      <id>cdh.snapshots.repo</id>
+      <url>https://repository.cloudera.com/artifactory/libs-snapshot-local</url>
+      <name>CDH Snapshots Repository</name>
+    </snapshotRepository>
+  </distributionManagement>
 
   <repositories>
     <repository>
@@ -87,6 +100,28 @@
       <name>www.apache.org</name>
       <url>https://repository.apache.org/content/repositories/releases</url>
     </repository>
+    <repository>
+      <id>cdh.releases.repo</id>
+      <url>https://repository.cloudera.com/content/groups/cdh-releases-rcs</url>
+      <name>CDH Releases Repository</name>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+    <repository>
+      <id>cdh.snapshots.repo</id>
+      <url>https://repository.cloudera.com/content/repositories/snapshots</url>
+      <name>CDH Snapshots Repository</name>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+    </repository>
   </repositories>
   <dependencies>
     <dependency>
@@ -96,9 +131,9 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.apache.hive</groupId>
+      <groupId>org.apache.hadoop.hive</groupId>
       <artifactId>hive-serde</artifactId>
-      <version>0.7.1-SNAPSHOT</version>
+      <version>0.7.1-cdh3u1</version>
     </dependency>
     <dependency>
       <groupId>log4j</groupId>
@@ -116,9 +151,9 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.apache.hive</groupId>
+      <groupId>org.apache.hadoop.hive</groupId>
       <artifactId>hive-exec</artifactId>
-      <version>0.7.1-SNAPSHOT</version>
+      <version>0.7.1-cdh3u1</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
