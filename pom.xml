@@ -44,6 +44,12 @@
     </plugins>
   </build>
 
+  <scm>
+    <connection>scm:git:git://github.com/cloudera/haivvreo.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/cloudera/haivvreo.git</developerConnection>
+    <url>https://github.com/cloudera/haivvreo</url>
+  </scm>
+
   <distributionManagement>
     <repository>
       <id>cdh.releases.repo</id>
